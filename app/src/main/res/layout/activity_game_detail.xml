@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.GameDetailActivity">
+
+    
+    <ImageView
+        android:id="@+id/ivGameImage"
+        android:layout_width="540dp"
+        android:layout_height="304dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/game_detail_photo"
+        />
+
+    <TextView
+        android:id="@+id/tvGameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Mortal Kombat X"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="@id/ivGameImage"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        />
+
+    <TextView
+        android:id="@+id/tvGameTitleDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ivGameImage"
+        android:textColor="@color/game_title_color"
+        app:layout_constraintStart_toStartOf="@id/tvGameTitle"
+        android:textSize="18sp"
+        tools:text="Mortal Kombat X"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        />
+
+    <TextView
+        android:id="@+id/tvReleaseDate"
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Lançamento: 2018"
+        app:layout_constraintTop_toBottomOf="@id/tvGameTitleDescription"
+        android:textColor="@color/game_description"
+        app:layout_constraintStart_toStartOf="@id/tvGameTitle"
+        />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/tvReleaseDate"
+        app:layout_constraintStart_toStartOf="@id/tvGameTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textAlignment="textStart"
+        android:textColor="@color/game_description"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        tools:text="Mortal Kombat é uma série de jogos criados pelo estúdio de Chicago da Midway Games. Em 2011, depois da falência da Midway, a produção de Mortal Kombat foi adquirida pela Warner Bros, tornando-se em seguida na Netherealm. A Warner detém actualmente os direitos da série.
+
+A produção do primeiro jogo foi baseada na ideia original que Ed Boon e John Tobias tinham em fazer um jogo em que participasse Jean-Claude Van Damme,[2] mas a ideia foi deixada de parte, e em vez disso foi criado Mortal Kombat, um jogo de luta com temas de fantasia e ciência, lançado em Outubro de 1992.[3] O jogo original, gerou muitas sequelas, vários jogos de acção-aventura, filmes (animados e live-action com a sua sequela) e séries de televisão (animadas e live-action). Outra média inclui banda desenhada, jogo de cartas e a Mortal Kombat: Live Tour, um teatro de artes marciais com personagens da série. "
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

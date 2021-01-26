@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_background"
+    tools:context=".view.RegisterActivity">
+
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cvGameRegister"
+        app:layout_constraintBottom_toTopOf="@id/cvGameRegister"
+        android:translationZ="10dp"
+
+
+    />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvGameRegister"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="60dp"
+        android:background="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="8dp"
+        >
+
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/white"
+            >
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilGameName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="10dp"
+        android:hint="Name"
+        app:boxBackgroundColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tilGameNameEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:paddingStart="1dp"
+            android:paddingEnd="1dp"
+            android:textColor="@color/light_teal"
+            tools:text="dh@digitalhouse.com" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilCreateDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Created at"
+        app:boxBackgroundColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/tilGameName"
+        app:layout_constraintStart_toStartOf="@id/tilGameName"
+        app:layout_constraintTop_toBottomOf="@id/tilGameName"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tilCreateDateEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:paddingStart="1dp"
+            android:paddingEnd="1dp"
+            android:textColor="@color/light_teal"
+            tools:text="sadasdasdasdsadsad" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Description"
+        app:boxBackgroundColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/tilGameName"
+        app:layout_constraintStart_toStartOf="@id/tilGameName"
+        app:layout_constraintTop_toBottomOf="@id/tilCreateDate"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tilDescriptionEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:paddingStart="1dp"
+            android:paddingEnd="1dp"
+            android:paddingBottom="50dp"
+            android:textAlignment="textStart"
+            android:textColor="@color/light_teal"
+            tools:text="sadasdasdasdsadsad" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLogin"
+        style="@style/ButtonDefault"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="60dp"
+        android:enabled="false"
+        android:text="save game"
+        app:layout_constraintTop_toBottomOf="@id/tilDescription"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
