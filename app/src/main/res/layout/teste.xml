@@ -3,13 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="180dp"
-    android:layout_height="180dp"
+    android:layout_height="90dp"
     android:layout_marginStart="5dp"
     android:layout_marginEnd="5dp"
     android:layout_marginTop="5dp"
     app:cardCornerRadius="8dp"
-    android:id="@+id/CardContainer"
-    android:background="?attr/selectableItemBackground"
     >
 
 
@@ -17,18 +15,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/ivGameFrameImage"
-            android:layout_width="match_parent"
-            android:layout_height="115dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/game_detail_photo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvGameFrameTitle"
+            android:id="@+id/tvGameFrameTitlee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -36,20 +25,28 @@
             android:textColor="@color/game_title_color"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ivGameFrameImage"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="Mortal Kombat X" />
 
         <TextView
-            android:id="@+id/tvReleaseYear"
+            android:id="@+id/tvReleaseYearr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/game_description"
             android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="@id/tvGameFrameTitle"
-            app:layout_constraintTop_toBottomOf="@id/tvGameFrameTitle"
+            app:layout_constraintStart_toStartOf="@id/tvGameFrameTitlee"
+            app:layout_constraintTop_toBottomOf="@id/tvGameFrameTitlee"
             tools:text="2018"
+            />
 
-
+        <TextView
+            android:id="@+id/ivGameFrameImagee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvReleaseYearr"
+            app:layout_constraintStart_toStartOf="@id/tvReleaseYearr"
+            tools:text="wasdsadsada"
+            android:textColor="@color/middle_red"
             />
 
 

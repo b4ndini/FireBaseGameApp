@@ -37,6 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:errorEnabled="true"
 
         >
 
@@ -63,7 +64,7 @@
         app:layout_constraintEnd_toEndOf="@id/tilEmail"
         app:layout_constraintStart_toStartOf="@id/tilEmail"
         app:layout_constraintTop_toBottomOf="@id/tilEmail"
-
+        app:errorEnabled="true"
         >
 
         <com.google.android.material.textfield.TextInputEditText

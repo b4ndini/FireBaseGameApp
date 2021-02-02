@@ -94,11 +94,11 @@
             android:id="@+id/tilCreateDateEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
+            android:inputType="numberDecimal"
             android:paddingStart="1dp"
             android:paddingEnd="1dp"
             android:textColor="@color/light_teal"
-            tools:text="sadasdasdasdsadsad" />
+            tools:text="1900" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -129,7 +129,7 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnSaveGame"
         style="@style/ButtonDefault"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

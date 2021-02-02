@@ -60,6 +60,7 @@
         app:layout_constraintEnd_toEndOf="@id/tilName"
         app:layout_constraintStart_toStartOf="@id/tilName"
         app:layout_constraintTop_toBottomOf="@id/tilName"
+        app:errorEnabled="true"
 
         >
 
@@ -111,6 +112,7 @@
         app:layout_constraintEnd_toEndOf="@id/tilName"
         app:layout_constraintStart_toStartOf="@id/tilName"
         app:layout_constraintTop_toBottomOf="@id/tilPassword"
+        app:errorEnabled="true"
 
         >
 
