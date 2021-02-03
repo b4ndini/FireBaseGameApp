@@ -34,13 +34,7 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(bind.root)
         SignUp()
 
-        /*  bind.btnCreateAccount.setOnClickListener{
-              startActivity(Intent(this, RegisterGameActivity::class.java))
-          }
 
-          bind.tilEmailEdit.setOnClickListener{
-              bind.btnCreateAccount.isEnabled = true
-          }*/
     }
 
 
@@ -52,13 +46,7 @@ class RegisterActivity : AppCompatActivity() {
         var confirmPass: String?
 
 
-        /*  if(name.is != (null) && email != null&& password != null && confirmPass != null){
-              bind.btnCreateAccount.isEnabled
-          }*/
 
-        /*   bind.tilEmailEdit.setOnClickListener{
-               bind.btnCreateAccount.isEnabled = true
-           }*/
 
 
         bind.tilNameEdit.addTextChangedListener(registerWatcher)
@@ -90,7 +78,7 @@ class RegisterActivity : AppCompatActivity() {
                         .addOnSuccessListener {
                             Toast.makeText(
                                 this@RegisterActivity,
-                                "USUÁRIO CADASTRADO COM SUCESSO",
+                                "Usuário cadastrado com sucesso",
                                 Toast.LENGTH_SHORT
                             ).show()
 

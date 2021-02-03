@@ -5,14 +5,15 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
-import android.widget.ImageView
 import android.widget.Toast
 import com.example.digitalhousegameapp.databinding.ActivityRegisterGameBinding
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
-import de.hdodenhof.circleimageview.CircleImageView
+
 
 class RegisterGameActivity : AppCompatActivity() {
 
@@ -40,10 +41,14 @@ class RegisterGameActivity : AppCompatActivity() {
         bind.civSetImage.setOnClickListener {
             val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
             startActivityForResult(gallery, pickImage)
+
         }
 
+        bind.tilGameNameEdit.addTextChangedListener(registerWatcher)
+        bind.tilCreateDateEdit.addTextChangedListener(registerWatcher)
+        bind.tilDescriptionEdit.addTextChangedListener(registerWatcher)
 
-        bind.tilGameNameEdit.setOnClickListener { bind.btnSaveGame.isEnabled = true }
+
         bind.btnSaveGame.setOnClickListener {
             val game = hashMapOf(
                 "name" to bind.tilGameNameEdit.text.toString(),
@@ -116,11 +121,40 @@ class RegisterGameActivity : AppCompatActivity() {
 
                 //
                 bind.civSetImage.setImageURI(imageUri)
+
             }
         }
 
 
 
     }
+
+    private val registerWatcher: TextWatcher = object : TextWatcher {
+        override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+        }
+
+        override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+
+
+            val nameInput: String = bind.tilGameNameEdit.text.toString().trim()
+            val dateInput: String = bind.tilCreateDateEdit.text.toString().trim()
+            val descriptionInput: String = bind.tilDescriptionEdit.text.toString().trim()
+
+
+            enableRegister(nameInput, dateInput, descriptionInput, image)
+        }
+
+        override fun afterTextChanged(s: Editable) {
+
+        }
+    }
+
+
+
+
+    private fun enableRegister(name: String, date: String, description: String, image: String?) {
+        bind.btnSaveGame.isEnabled = !name.isNullOrBlank() && !date.isNullOrBlank() && !description.isNullOrBlank() && !image.isNullOrBlank()
+    }
+
 
 }
