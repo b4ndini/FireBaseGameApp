@@ -1,6 +1,6 @@
 package com.example.digitalhousegameapp.view
 
-import android.app.ProgressDialog.show
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,7 +10,6 @@ import android.widget.Toast
 import com.example.digitalhousegameapp.databinding.ActivityLoginBinding
 import com.example.digitalhousegameapp.utils.isEmailValid
 import com.google.firebase.FirebaseTooManyRequestsException
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
 import com.google.firebase.auth.ktx.auth
@@ -38,9 +37,6 @@ class LoginActivity : AppCompatActivity() {
         SignUp()
 
 
-        /* bind.btnLogin.setOnClickListener{
-             startActivity(Intent(this, HomeActivity::class.java))
-         }*/
 
         bind.btnRegister.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))

@@ -4,23 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splash_background"
+    android:background="@drawable/splash_image"
     tools:context=".view.RegisterActivity">
 
 
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civSetImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:src="@drawable/circle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/cvGameRegister"
         app:layout_constraintBottom_toTopOf="@id/cvGameRegister"
         android:translationZ="10dp"
+        />
 
-
-    />
     <androidx.cardview.widget.CardView
         android:id="@+id/cvGameRegister"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,6 +97,7 @@
             android:inputType="numberDecimal"
             android:paddingStart="1dp"
             android:paddingEnd="1dp"
+            android:maxLength="4"
             android:textColor="@color/light_teal"
             tools:text="1900" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -111,17 +112,20 @@
         app:layout_constraintEnd_toEndOf="@id/tilGameName"
         app:layout_constraintStart_toStartOf="@id/tilGameName"
         app:layout_constraintTop_toBottomOf="@id/tilCreateDate"
+        android:scrollbars="vertical"
 
         >
 
         <com.google.android.material.textfield.TextInputEditText
+            android:scrollbars="vertical"
             android:id="@+id/tilDescriptionEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textMultiLine"
+            android:maxLines="5"
+            android:paddingBottom="40dp"
             android:paddingStart="1dp"
             android:paddingEnd="1dp"
-            android:paddingBottom="50dp"
             android:textAlignment="textStart"
             android:textColor="@color/light_teal"
             tools:text="sadasdasdasdsadsad" />
@@ -139,9 +143,9 @@
         android:text="save game"
         app:layout_constraintTop_toBottomOf="@id/tilDescription"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tilDescription"
 
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@id/tilDescription" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

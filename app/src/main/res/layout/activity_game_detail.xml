@@ -14,11 +14,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:src="@drawable/game_detail_photo"
+        tools:src="@drawable/game_detail_photo"
+        android:scaleType="fitXY"
         />
 
     <TextView
         android:id="@+id/tvGameTitle"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="Mortal Kombat X"
@@ -37,11 +39,12 @@
         app:layout_constraintTop_toBottomOf="@id/ivGameImage"
         android:textColor="@color/game_title_color"
         app:layout_constraintStart_toStartOf="@id/tvGameTitle"
-        android:textSize="18sp"
+        android:textSize="22sp"
         tools:text="Mortal Kombat X"
         android:textStyle="bold"
         android:layout_marginTop="15dp"
         />
+
 
     <TextView
         android:id="@+id/tvReleaseDate"
@@ -55,9 +58,10 @@
         />
 
     <TextView
+        android:id="@+id/tvGameDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/tvReleaseDate"
         app:layout_constraintStart_toStartOf="@id/tvGameTitle"
         app:layout_constraintEnd_toEndOf="parent"

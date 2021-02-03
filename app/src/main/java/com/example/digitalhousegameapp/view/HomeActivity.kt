@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.digitalhousegameapp.databinding.ActivityHomeBinding
 import com.example.digitalhousegameapp.model.Game
@@ -19,7 +20,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 
-class HomeActivity : AppCompatActivity(){
+class HomeActivity : AppCompatActivity(), OnClickListenerInterface {
 
 
     private val db:FirebaseFirestore = FirebaseFirestore.getInstance()
@@ -28,15 +29,6 @@ class HomeActivity : AppCompatActivity(){
 
     private lateinit var bind: ActivityHomeBinding
     var gameAdapter: HomeAdapter? = null
-
-
-    private val fireeDB by lazy{
-        FirebaseFirestore.getInstance()
-
-
-    }
-
-
 
     private val firebaseAuth by lazy {
         Firebase.auth
@@ -50,16 +42,10 @@ class HomeActivity : AppCompatActivity(){
         setContentView(bind.root)
 
         val user = firebaseAuth.currentUser
-        if (user != null) {
-            Toast.makeText(this@HomeActivity, "Usuário logado", Toast.LENGTH_SHORT)
-                .show()
-        } else {
-            Toast.makeText(this@HomeActivity, "NAO ENTROU", Toast.LENGTH_SHORT)
-                .show()
-        }
 
-        var name = intent.getStringExtra("username")
-        bind.tvUserName.text = name
+
+        /*var name = intent.getStringExtra("username")
+        bind.tvUserName.text = name*/
 
 
         bind.fabAddGame.setOnClickListener{
@@ -67,20 +53,14 @@ class HomeActivity : AppCompatActivity(){
         }
 
 
-        /*val doc = fireDB.collection("games").document("pjRKnPLiZidwSIy7QwSL")
-        doc.get()
-            .addOnSuccessListener {
-                val game = it.data
-                bind.tvUserName.text = game?.get("game_name") as String
-            }
-            .addOnFailureListener { bind.tvUserName.text = "erro" }*/
+
         setupRecyclerView()
     }
 
 
 
     private fun setupRecyclerView() {
-       // val gameList: CollectionReference = fireeDB.collection("Game")
+
 
        val query: Query = collectionReference
 
@@ -91,9 +71,9 @@ class HomeActivity : AppCompatActivity(){
             .build()
 
 
-        gameAdapter = HomeAdapter(options)
+        gameAdapter = HomeAdapter(options, this)
         bind.rvGamesList.apply {
-            layoutManager = LinearLayoutManager(this@HomeActivity)
+            layoutManager = GridLayoutManager(this@HomeActivity, 2)
             adapter = gameAdapter
         }
 
@@ -101,14 +81,6 @@ class HomeActivity : AppCompatActivity(){
 
     override fun onStart() {
         super.onStart()
-     //   val user = firebaseAuth.currentUser
-      /*  if (user != null) {
-            Toast.makeText(this@HomeActivity, "Usuário logado", Toast.LENGTH_SHORT)
-                .show()
-        } else {
-            Toast.makeText(this@HomeActivity, "NAO ENTROU", Toast.LENGTH_SHORT)
-                .show()
-        }*/
         var name = intent.getStringExtra("user_name")
         gameAdapter?.startListening()
 
@@ -120,9 +92,17 @@ class HomeActivity : AppCompatActivity(){
         gameAdapter?.stopListening()
     }
 
-  /*  override fun onItemClicked(documentSnapshot: DocumentSnapshot, position: Int) {
+    override fun onItemClicked(documentSnapshot: DocumentSnapshot, position: Int) {
 
-    }*/
+        var id : String = documentSnapshot.id
+        val intent = Intent(this@HomeActivity, GameDetailActivity::class.java)
+        intent.putExtra("game_id", id)
+
+
+        startActivity(intent)
+
+    }
+
 
 
 }

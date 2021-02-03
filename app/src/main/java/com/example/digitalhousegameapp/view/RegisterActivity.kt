@@ -90,7 +90,7 @@ class RegisterActivity : AppCompatActivity() {
                         .addOnSuccessListener {
                             Toast.makeText(
                                 this@RegisterActivity,
-                                "USUARIO CADASTRADO COM SUCESSO",
+                                "USUÁRIO CADASTRADO COM SUCESSO",
                                 Toast.LENGTH_SHORT
                             ).show()
 
@@ -101,7 +101,7 @@ class RegisterActivity : AppCompatActivity() {
                         .addOnFailureListener {
                             Toast.makeText(
                                 this@RegisterActivity,
-                                "ERRO ERRO ERRO ERRO ERRO",
+                                "ERRO",
                                 Toast.LENGTH_SHORT
                             ).show()
                         }
