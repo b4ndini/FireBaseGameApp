@@ -63,5 +63,7 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
     //circle image view
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+    //search bar
+    implementation 'com.lapism:search:2.4.1@aar'
 
 }
