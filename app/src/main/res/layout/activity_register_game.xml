@@ -21,6 +21,20 @@
         android:translationZ="10dp"
         />
 
+    <ImageView
+        android:id="@+id/ivCameraIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/camera"
+        app:layout_constraintStart_toStartOf="@id/civSetImage"
+        app:layout_constraintEnd_toEndOf="@id/civSetImage"
+        app:layout_constraintTop_toTopOf="@id/civSetImage"
+        app:layout_constraintBottom_toBottomOf="@id/civSetImage"
+        app:tint="@color/white"
+        android:translationZ="10dp"
+        android:visibility="visible"
+        />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cvGameRegister"
         app:layout_constraintStart_toStartOf="parent"

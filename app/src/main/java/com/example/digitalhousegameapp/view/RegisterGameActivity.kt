@@ -9,6 +9,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.widget.Toast
+import androidx.core.view.isVisible
 import com.example.digitalhousegameapp.databinding.ActivityRegisterGameBinding
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -121,7 +122,7 @@ class RegisterGameActivity : AppCompatActivity() {
 
                 //
                 bind.civSetImage.setImageURI(imageUri)
-
+                bind.ivCameraIcon.isVisible = false
             }
         }
 
