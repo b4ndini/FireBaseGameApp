@@ -18,7 +18,7 @@ import com.google.firebase.storage.ktx.storage
 
 class RegisterGameActivity : AppCompatActivity() {
 
-
+    var confirmImage: String? = null
     private lateinit var bind: ActivityRegisterGameBinding
     private var image: String? = null
     private val pickImage = 100
@@ -122,6 +122,8 @@ class RegisterGameActivity : AppCompatActivity() {
 
                 //
                 bind.civSetImage.setImageURI(imageUri)
+                confirmImage = "ok"
+                enableRegister(bind.tilGameNameEdit.text.toString(), bind.tilCreateDateEdit.text.toString(), bind.tilDescriptionEdit.text.toString(), confirmImage)
                 bind.ivCameraIcon.isVisible = false
             }
         }
