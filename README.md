@@ -1,4 +1,6 @@
 # FireBaseGameApp
 Quarto e último desafio do curso Santander Coders Mobile Android pela Digital House
 
-<img src="https://user-images.githubusercontent.com/68094845/109596753-97f62800-7af5-11eb-99a4-692368a035b0.jpg" width="90%"></img> 
+Link para download do APK: https://drive.google.com/file/d/1tpn3UlfTtYGLEXneqvOQblBupJVspx8i/view?usp=sharing
+
+<img src=https://user-images.githubusercontent.com/68094845/109863068-f4655e80-7c3f-11eb-995e-958bdadd4597.jpg" width="90%"></img> 
